@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { formatDateString } from "@/lib/utils";
-// import DeleteThread from "../forms/DeleteThread";
+import DeleteThread from "../forms/DeleteThread";
 
 interface Props {
   id: string;
@@ -114,17 +114,17 @@ function ThreadCard({
           </div>
         </div>
 
-        {/* <DeleteThread
+        <DeleteThread
           threadId={JSON.stringify(id)}
           currentUserId={currentUserId}
           authorId={author.id}
           parentId={parentId}
           isComment={isComment}
-        /> */}
+        />
       </div>
 
-      {/* {!isComment && comments.length > 0 && (
-        <div className='ml-1 mt-3 flex items-center gap-2'>
+      {!isComment && comments.length > 0 && (
+        <div className="ml-1 mt-3 flex items-center gap-2">
           {comments.slice(0, 2).map((comment, index) => (
             <Image
               key={index}
@@ -137,7 +137,7 @@ function ThreadCard({
           ))}
 
           <Link href={`/thread/${id}`}>
-            <p className='mt-1 text-subtle-medium text-gray-1'>
+            <p className="mt-1 text-subtle-medium text-gray-1">
               {comments.length} repl{comments.length > 1 ? "ies" : "y"}
             </p>
           </Link>
@@ -147,9 +147,9 @@ function ThreadCard({
       {!isComment && community && (
         <Link
           href={`/communities/${community.id}`}
-          className='mt-5 flex items-center'
+          className="mt-5 flex items-center"
         >
-          <p className='text-subtle-medium text-gray-1'>
+          <p className="text-subtle-medium text-gray-1">
             {formatDateString(createdAt)}
             {community && ` - ${community.name} Community`}
           </p>
@@ -159,10 +159,10 @@ function ThreadCard({
             alt={community.name}
             width={14}
             height={14}
-            className='ml-1 rounded-full object-cover'
+            className="ml-1 rounded-full object-cover"
           />
         </Link>
-      )} */}
+      )}
     </article>
   );
 }
